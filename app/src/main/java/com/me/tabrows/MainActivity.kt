@@ -10,7 +10,7 @@ import androidx.compose.material.*
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.ExperimentalLifecycleComposeApi
 import com.google.accompanist.pager.*
-import com.me.tabrows.screens.TabsScreen
+import com.me.tabrows.screens.SetTabsScreen
 import com.me.tabrows.ui.theme.TabRowsTheme
 import com.me.tabrows.viewmodel.TabViewModel
 
@@ -23,7 +23,7 @@ class MainActivity : ComponentActivity() {
 
         val viewModel: TabViewModel by viewModels()
 
-        Log.d("MY_VIEW_MODEL", "$viewModel")
+        Log.d("ACCOMPANIST_WEB_VIEW", "ViewModel: $viewModel")
 
         setContent {
             TabRowsTheme {
@@ -31,7 +31,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    TabsScreen(viewModel = viewModel)
+                    SetTabsScreen(viewModel = viewModel)
                 }
             }
         }

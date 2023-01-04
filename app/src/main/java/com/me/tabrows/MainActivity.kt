@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.ExperimentalLifecycleComposeApi
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.google.accompanist.pager.*
 import com.me.tabrows.screens.SetTabsScreen
 import com.me.tabrows.ui.theme.TabRowsTheme
@@ -21,17 +22,13 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val viewModel: TabViewModel by viewModels()
-
-        Log.d("ACCOMPANIST_WEB_VIEW", "ViewModel: $viewModel")
-
         setContent {
             TabRowsTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    SetTabsScreen(viewModel = viewModel)
+                    SetTabsScreen(viewModel = viewModel())
                 }
             }
         }
